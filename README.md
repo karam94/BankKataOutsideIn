@@ -12,3 +12,5 @@ In order to try this Kata out yourself with an Outside-In approach:
 * Running your Acceptance Test will result in NotImplementedExceptions firing left, right & center.
 * Work inwards from the outside by writing tests around each method you start to implement.
 * Once each requirement is implemented, running the Acceptance Test should eventually turn fully green and you've tested the rest of your units in the process!
+
+**Note:** If you spot any improvements/refactorings, let me know or submit a PR! :)
