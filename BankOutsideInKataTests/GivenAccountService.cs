@@ -5,7 +5,7 @@ using BankOutsideInKata.Interfaces;
 using NSubstitute;
 using NUnit.Framework;
 
-namespace BankOutsideInKata_Tests
+namespace BankOutsideInKataTests
 {
     public class GivenAccountService
     {

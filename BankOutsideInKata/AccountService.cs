@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using BankOutsideInKata.Interfaces;
 
@@ -13,6 +14,7 @@ namespace BankOutsideInKata
         {
             _transactionRepository = transactionRepository;
             _bankStatementPrinter = bankStatementPrinter;
+
         }
 
         public void Deposit(int amount)
@@ -27,18 +29,28 @@ namespace BankOutsideInKata
 
         public void PrintStatement()
         {
+            var accountTransactions = GetAccountTransactions();
+            var runningBalance = CalculateAccountTransactionsBalance(accountTransactions);
+
             _bankStatementPrinter.Print("Date || Amount || Balance");
 
-            var transactionsToPrint = _transactionRepository.GetAll();
-            var runningBalance = transactionsToPrint.Sum(x => x.Amount);
-
-            foreach (var transaction in transactionsToPrint)
+            foreach (var transaction in accountTransactions)
             {
                 _bankStatementPrinter.Print(
                     $"{transaction.TransactionDate:dd'/'MM'/'yyyy} || {transaction.Amount} || {runningBalance}");
 
                 runningBalance -= transaction.Amount;
             }
+        }
+
+        private IEnumerable<Transaction> GetAccountTransactions()
+        {
+            return _transactionRepository.GetAll();
+        }
+
+        private int CalculateAccountTransactionsBalance(IEnumerable<Transaction> transactions)
+        {
+            return transactions.Sum(x => x.Amount);
         }
     }
 }

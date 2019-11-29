@@ -6,7 +6,7 @@ using NSubstitute;
 using NUnit.Framework;
 using Shouldly;
 
-namespace BankOutsideInKata_Tests
+namespace BankOutsideInKataTests
 {
     public class GivenTransactionRepository
     {

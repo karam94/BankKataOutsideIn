@@ -3,7 +3,7 @@ using BankOutsideInKata;
 using NUnit.Framework;
 using Shouldly;
 
-namespace BankOutsideInKata_Tests
+namespace BankOutsideInKataTests
 {
     public class GivenDateProvider
     {

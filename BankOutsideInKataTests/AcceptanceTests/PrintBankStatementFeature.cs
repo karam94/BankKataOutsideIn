@@ -4,7 +4,7 @@ using BankOutsideInKata.Interfaces;
 using NSubstitute;
 using NUnit.Framework;
 
-namespace BankOutsideInKata_Tests.AcceptanceTests
+namespace BankOutsideInKataTests.AcceptanceTests
 {
     // Acceptance Test of the whole system.
     // Started with scaffolding out this test to represent our desired behaviour/feature.
